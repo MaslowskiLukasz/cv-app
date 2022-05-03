@@ -20,7 +20,7 @@ const formFields = [
     name: 'Education',
     fields: [
       {
-        name: 'school-name',
+        name: 'schoolName',
         type: 'text'
       },
       {
@@ -28,11 +28,11 @@ const formFields = [
         type: 'text'
       },
       {
-        name: 'start-date',
+        name: 'startDate',
         type: 'date'
       },
       {
-        name: 'end-date',
+        name: 'endDate',
         type: 'date'
       }
     ]
@@ -41,7 +41,7 @@ const formFields = [
     name: 'Experience',
     fields: [
       {
-        name: 'company-name',
+        name: 'companyName',
         type: 'text'
       },
       {
@@ -53,11 +53,11 @@ const formFields = [
         type: 'text'
       },
       {
-        name: 'start-date',
+        name: 'startDate',
         type: 'date'
       },
       {
-        name: 'end-date',
+        name: 'endDate',
         type: 'date'
       }
     ]
