@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
+import Preview from './components/Preview';
 import formFields from './common/formFields';
 
 class App extends Component {
@@ -7,7 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>CV-app</h1>
-        <Form sections={formFields}/>
+        <Form sections={formFields} />
+        <Preview />
       </div>
     );
   }
