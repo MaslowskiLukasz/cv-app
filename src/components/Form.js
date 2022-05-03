@@ -2,42 +2,51 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   render() {
+    const sections = this.props.sections;
     return (
       <div>
         <h2>Form</h2>
-        <GeneralInfo />
-        <Education />
-        <Experience />
+        {sections.map((section) => {
+          return <FormSection sectionName={section.name} fields={section.fields} />
+        })}
       </div>
     )
   }
 }
 
-class GeneralInfo extends Component {
+class FormSection extends Component {
   render() {
+      return (
+        <div className='form-section'>
+          <h3>{this.props.sectionName}</h3>
+          <InputList fields={this.props.fields} />
+          <button>Submit</button>
+          <button>Edit</button>
+        </div>
+      )
+  }
+}
+
+class InputList extends Component {
+  render() {
+    const fields = this.props.fields;
     return(
       <div>
-        <h3>GeneralInfo</h3>
+        {fields.map((field) => {
+          return <InputItem name={field.name} type={field.type} />
+        })}
       </div>
     )
   }
 }
 
-class Education extends Component {
+class InputItem extends Component {
   render() {
+    const { name, type } = this.props;
     return (
       <div>
-        <h3>Education</h3>
-      </div>
-    )
-  }
-}
-
-class Experience extends Component {
-  render() {
-    return (
-      <div>
-        <h3>Experience</h3>
+        <label htmlFor={name}>{name}</label>
+        <input id={name} type={type}></input>
       </div>
     )
   }
