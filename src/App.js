@@ -13,6 +13,7 @@ class App extends Component {
     this.handleSubmitGeneralInfo = this.handleSubmitGeneralInfo.bind(this);
     this.handleSubmitEducation = this.handleSubmitEducation.bind(this);
     this.handleSubmitExperience = this.handleSubmitExperience.bind(this);
+    this.handleEditGeneralInfo = this.handleEditGeneralInfo.bind(this);
 
     this.state = {
       inputs: [
@@ -91,33 +92,45 @@ class App extends Component {
     })
   }
 
-  handleSubmitGeneralInfo() {
+  handleSubmitGeneralInfo(event) {
+    event.preventDefault();
     const nextState = [...this.state.preview];
-    nextState[0] = this.state.inputs[0];
-    console.log(nextState);
+    const input = {...this.state.inputs[0]}
+    nextState.splice(0, 1, input);
 
     this.setState({
       preview: nextState
     })
   }
 
-  handleSubmitEducation() {
+  handleSubmitEducation(event) {
+    event.preventDefault();
     const nextState = [...this.state.preview];
-    nextState[1] = this.state.inputs[1];
-    console.log(nextState);
+    const input = {...this.state.inputs[1]}
+    nextState.splice(1, 1, input);
 
     this.setState({
       preview: nextState
     })
   }
 
-  handleSubmitExperience() {
+  handleSubmitExperience(event) {
+    event.preventDefault();
     const nextState = [...this.state.preview];
-    nextState[2] = this.state.inputs[2];
-    console.log(nextState);
+    const input = {...this.state.inputs[2]}
+    nextState.splice(2, 1, input);
 
     this.setState({
       preview: nextState
+    })
+  }
+
+  handleEditGeneralInfo() {
+    const nextState = [...this.state.inputs];
+    nextState[0] = this.state.preview[0];
+
+    this.setState({
+      inputs: nextState
     })
   }
 

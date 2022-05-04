@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Form extends Component {
   render() {
-    const { section, inputs, handleChange, handleSubmit } = this.props;
+    const { section, inputs, handleChange, handleSubmit, handleEdit } = this.props;
 
     return (
       <div>
@@ -13,8 +13,8 @@ class Form extends Component {
             inputs={inputs}
             handleChange={handleChange}
           />
-          <button onClick={handleSubmit} type='button'>Submit</button>
-          <button type='reset'>Edit</button>
+          <button onClick={handleSubmit} type='submit'>Submit</button>
+          <button onClick={handleEdit} type='button'>Edit</button>
         </form>
       </div>
     )
